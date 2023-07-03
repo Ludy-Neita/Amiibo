@@ -1,9 +1,6 @@
-import DatosFiltro from "../components/DatosFiltro.json"
-import "../Stlye/Filtro.css"
+import DatosFiltro from "../data/DatosFiltro.json"
+import "../styleSheets/Filtro.css"
 import {FcFilledFilter} from '@react-icons/all-files/fc/FcFilledFilter'
-import { useEffect, useState } from "react"
-
-import Listado2 from "../components/Listado2"
 
 
 export default function Filtro({ setFiltros }) {

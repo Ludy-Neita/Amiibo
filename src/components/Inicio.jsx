@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import Filtro from './Filtro';
-import Listado2 from './Listado2';
-import "../Stlye/Inicio.css"
+import Filtro from '../pages/Filtro';
+import Listado2 from '../pages/Listado2';
+import "../styleSheets/Inicio.css"
 
 export default function Inicio() {
 

@@ -1,8 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
-import { Card, Dimmer, Image, Loader, Icon, Button, ButtonContent } from "semantic-ui-react";
-
-import "../Stlye/Item2.css";
+import "../styleSheets/Item2.css";
 
 export default function Item2({ listAmiiboAPI, loading }) {
   //export default function Item2 ({ listAmiiboAPI, cantidadAmiibo, setCantidadAmiibo }) {
@@ -46,39 +44,18 @@ export default function Item2({ listAmiiboAPI, loading }) {
 
       <div className="detalles">
 
-        <Button
+        <button
           className="button-detalles"
-          animated
-          fluid
           target="_blank"
           color="black"
           onClick={() => navigate(`/detalles/${listAmiiboAPI.type}`)}
-
         >
-          <Button.Content visible>
             Más Detalles
-          </Button.Content>
-
-          <Button.Content hidden>
-            <Icon name="angle double right" />
-          </Button.Content>
-
-        </Button>
-
+        </button>
 
       </div>
 
-
-
-
-
-
-
-
     </div>
-
-
-
 
   )
 }

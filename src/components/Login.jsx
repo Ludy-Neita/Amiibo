@@ -1,5 +1,5 @@
-import '../Stlye/Login.css';
-//import titulo from "../img/name.png"
+import '../styleSheets/Login.css';
+
 import ImgTitulo from "../img/Titulo.png"
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
