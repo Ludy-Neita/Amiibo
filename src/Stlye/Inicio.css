@@ -1,0 +1,20 @@
+
+  .Imagen-top{
+   background-image: url("../img/amiibos2.png");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+
+
+   width: 100%;
+   height: 30vh;
+  
+}
+
+.Titulo-inicial{
+   font-size: 30px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   color: black;
+   text-align: center;
+   text-transform: uppercase;
+}
