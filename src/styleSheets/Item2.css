@@ -23,7 +23,7 @@
 
     /* background-color: yellow;*/
     height: 250px;
-    width: 80vv;
+    width: 50%;
 
 }
 
@@ -45,13 +45,13 @@
 
 .button-detalles {
 
-    background-color: rgba(76, 167, 225, 0.7);
+    background-image: linear-gradient(to right,rgb(182, 38, 121), rgba(76, 167, 225));
     width: 130px;
     height: 35px;
     border-radius: 15px;
     cursor: pointer;
     font-size: 13px;
-    border: 1px solid rgba(76, 167, 225);
+    border: none;
     align-items: center;
     margin: 15px auto;
     display: flex;

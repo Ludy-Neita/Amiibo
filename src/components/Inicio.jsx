@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Filtro from '../pages/Filtro';
 import Listado2 from '../pages/Listado2';
 import "../styleSheets/Inicio.css"
+import { useNavigate } from 'react-router-dom';
 
 export default function Inicio() {
 
@@ -20,6 +21,7 @@ export default function Inicio() {
 
             console.log(informacionAPIJson);
             setResultadoAmiibo(informacionAPIJson.amiibo);
+            console.log(resultadoAmiibo);
             //setLoading(false);
 
         }
@@ -37,9 +39,16 @@ export default function Inicio() {
         setAmiibosFiltrados(variableTemporal)
 
         console.log(resultadoAmiibo)
+        console.log(filtros)
 
-    }, [filtros]) // se actualiza esee use Effect que se cambia 
+    }, [filtros]) // se actualiza el useEffect cada vez que cambia filtros
 
+    const navigate = useNavigate()
+    const cerrarSesion = () => {
+
+        localStorage.removeItem('cuenta');
+        navigate('/');
+    };
 
     return (
 
@@ -49,6 +58,11 @@ export default function Inicio() {
             <div className="Imagen-top"> </div>
 
             <h1 className='Titulo-inicial'>Los mejores Amiibos</h1>
+
+            <button className="button-cerrar-sesion" onClick={cerrarSesion}>
+                Cerrar Sesión
+            </button>
+
 
             <Filtro
                 setFiltros={setFiltros}/>

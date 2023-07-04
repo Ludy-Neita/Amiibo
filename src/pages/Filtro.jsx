@@ -12,14 +12,12 @@ export default function Filtro({ setFiltros }) {
            <a className="Titulo-filtro"> <FcFilledFilter /> Filtrar por tipo de amiibo </a>
 
             <div className="contenedor-boton-filtro">
+
                 {DatosFiltro.map((tipo) =>
 
-                    <div 
-                   
-                    key={tipo.type}>
+                    <div key={tipo.type}>
 
                         <button
-                        
                             className="boton-filtro"
                             onClick={() => setFiltros(tipo.type)}
                         >

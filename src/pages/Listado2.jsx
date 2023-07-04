@@ -1,12 +1,15 @@
 import { useState } from 'react';
+
 import Item2 from './Item2';
 import "../styleSheets/Listado2.css"
+import Amiibo from './Amiibo';
+
 
 
 export default function Listado2({ resultadoFiltroAmiibo }) {
 
-    const [buscar, setBuscar] = useState("")
 
+    const [buscar, setBuscar] = useState("")
     const buscador = (e) => {
 
         setBuscar(e.target.value)
@@ -22,7 +25,7 @@ export default function Listado2({ resultadoFiltroAmiibo }) {
                 value={buscar}
                 onChange={buscador}
                 type="text"
-                placeholder=" 🔍︎  Buscar"> 
+                placeholder=" 🔍︎  Buscar">
             </input>
 
             <div className='contenedor-item' >
@@ -33,6 +36,8 @@ export default function Listado2({ resultadoFiltroAmiibo }) {
                         key={index}
                         listAmiiboAPI={amiiboAPI}
                     />
+
+
                 )}
 
             </div>

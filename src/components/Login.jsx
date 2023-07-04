@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
 
+  //localStorage.removeItem("cuenta")
+
   const navigate = useNavigate()
 
   const [usuario, setUsuario] = useState("");
@@ -38,9 +40,12 @@ export default function Login() {
       if (param.usuario === "Ludy" && param.contraseña === "123456") {
 
         const { usuario, contraseña } = param
+
         let ac = { usuario, contraseña };
         let account = JSON.stringify(ac);
+
         localStorage.setItem("cuenta", account);
+        
         setIsLogin(true);
         sethasError(false);
 

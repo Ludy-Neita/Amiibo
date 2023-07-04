@@ -1,13 +1,12 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 
 import "../styleSheets/Item2.css";
 
 export default function Item2({ listAmiiboAPI, loading }) {
   //export default function Item2 ({ listAmiiboAPI, cantidadAmiibo, setCantidadAmiibo }) {
+  
   const navigate = useNavigate();
 
-
-  // const { loading, resultadoAmiibo } = listAmiiboAPI;// se desestructura el props
 
   if (loading) {
     return (
@@ -30,6 +29,8 @@ export default function Item2({ listAmiiboAPI, loading }) {
   */
   return (
 
+    
+
     <div className="lista-amiibos">
 
       <h1 className="nombre-amiibo">{listAmiiboAPI.name} </h1>
@@ -44,18 +45,25 @@ export default function Item2({ listAmiiboAPI, loading }) {
 
       <div className="detalles">
 
+      <Link to={'/detalles/' + listAmiiboAPI.tail} >
         <button
           className="button-detalles"
           target="_blank"
           color="black"
-          onClick={() => navigate(`/detalles/${listAmiiboAPI.type}`)}
+         // onClick={() => navigate(`/detalles/${listAmiiboAPI.tail}`)}
+         
+          //onClick={() => Link {'/detalles/' + listAmiiboAPI.tail}}
         >
             Más Detalles
         </button>
 
+        </Link>
+
       </div>
 
     </div>
+
+    
 
   )
 }
