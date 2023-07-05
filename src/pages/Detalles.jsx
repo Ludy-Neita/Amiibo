@@ -25,7 +25,7 @@ export default function Detalles() {
 
     setAmiibo2API(informacion2APIJson.amiibo);
 
-    // console.log(amiibo2API)
+    console.log(amiibo2API)
 
   }
 

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import template from "./responseTemplate.json"
 
 export default function Cantidad() {
 
@@ -9,8 +8,10 @@ export default function Cantidad() {
     const [pagina, setPagina] = useState(1)
     const [datosActuales, setDatosActuales] = useState([])
 
+    const [resultadoAmiibo, setResultadoAmiibo] = useState([]);
+
     useEffect(() => {
-        setDatosActuales(template.amiibo.slice(0, 10 * pagina))
+        setDatosActuales(amiibosFiltrados.slice(0, 10 * pagina)) // datos del cero al 10. slice: cortar el arreglo.
     }, [pagina])
 
     return (

@@ -1,5 +1,4 @@
 import '../styleSheets/Login.css';
-
 import ImgTitulo from "../img/Titulo.png"
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -14,7 +13,6 @@ export default function Login() {
     setUsuario(value);
   }
 
-
   const [contraseña, setContraseña] = useState("");
   const [contraseñaError, setContraseñaError] = useState(false);
 
@@ -27,7 +25,6 @@ export default function Login() {
     }
   }
 
-
   const [hayError, setHayError] = useState(false);
 
   const ifMatch = (param) => {
@@ -36,26 +33,21 @@ export default function Login() {
 
       if (param.usuario === "Ludy" && param.contraseña === "123456") {
 
-       const { usuario, contraseña } = param
+        const { usuario, contraseña } = param
 
-       let variableRegistro = { usuario, contraseña };
-       let registro = JSON.stringify(variableRegistro);
+        let variableRegistro = { usuario, contraseña };
+        let registro = JSON.stringify(variableRegistro);
 
-       localStorage.setItem("cuenta", registro);
-      
+        localStorage.setItem("cuenta", registro);
+
 
         setHayError(false);
 
         navigate("/inicio")
 
-      } else {
-     
-        setHayError(true);
-      }
-    } else {
-  
-      setHayError(true);
-    }
+      } else { setHayError(true); } // del segundo if
+
+    } else { setHayError(true); } // del primer if
   }
 
   const verificar = () => {
