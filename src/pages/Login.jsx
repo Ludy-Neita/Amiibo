@@ -6,8 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
 
-  //localStorage.removeItem("cuenta")
-
   const navigate = useNavigate()
 
   const [usuario, setUsuario] = useState("");
@@ -15,7 +13,7 @@ export default function Login() {
   const ingresoUsuario = (value) => {
     setUsuario(value);
   }
-  //console.log(usuario);
+
 
   const [contraseña, setContraseña] = useState("");
   const [contraseñaError, setContraseñaError] = useState(false);
@@ -27,11 +25,10 @@ export default function Login() {
       setContraseñaError(false);
       setContraseña(value);
     }
-
   }
 
   const [isLogin, setIsLogin] = useState(false);
-  const [hasError, sethasError] = useState(false);
+  const [hayError, setHayError] = useState(false);
 
   const ifMatch = (param) => {
 
@@ -41,23 +38,23 @@ export default function Login() {
 
         const { usuario, contraseña } = param
 
-        let ac = { usuario, contraseña };
-        let account = JSON.stringify(ac);
+        let variableRegistro = { usuario, contraseña };
+        let registro = JSON.stringify(variableRegistro);
 
-        localStorage.setItem("cuenta", account);
+        localStorage.setItem("cuenta", registro);
         
         setIsLogin(true);
-        sethasError(false);
+        setHayError(false);
 
         navigate("/inicio")
 
       } else {
         setIsLogin(false);
-        sethasError(true);
+        setHayError(true);
       }
     } else {
       setIsLogin(false);
-      sethasError(true);
+      setHayError(true);
     }
   }
 
@@ -117,7 +114,7 @@ export default function Login() {
         </button>
 
 
-        {hasError &&
+        {hayError &&
           <label className="error-general">
             ¡The username or password is invalid!!
           </label>

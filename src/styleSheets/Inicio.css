@@ -1,5 +1,4 @@
 .button-cerrar-sesion{
-   background-color: rgb(147, 120, 136);
    width: 150px;
    height: 40px;
    font-family: Arial, Helvetica, sans-serif;
@@ -8,7 +7,7 @@
    align-items: center;
    margin: 25px auto;
    justify-content: center;
-   border: 2px solid;
+   border: 2px dashed;
    color: grey;
    background: linear-gradient(to left, transparent 50%, rgb(233, 172, 59) 50%) no-repeat right/ 200%;
    transition: background-position .3s ease;

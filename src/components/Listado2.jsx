@@ -2,8 +2,6 @@ import { useState } from 'react';
 
 import Item2 from './Item2';
 import "../styleSheets/Listado2.css"
-import Amiibo from './Amiibo';
-
 
 
 export default function Listado2({ resultadoFiltroAmiibo }) {

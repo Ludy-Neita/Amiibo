@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import Filtro from '../pages/Filtro';
-import Listado2 from '../pages/Listado2';
+import Filtro from "../components/Filtro";
+import Listado2 from "../components/Listado2"
 import "../styleSheets/Inicio.css"
 import { useNavigate } from 'react-router-dom';
 

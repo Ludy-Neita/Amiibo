@@ -42,7 +42,6 @@ export default function Item2({ listAmiiboAPI, loading }) {
       />
 
       <div className="nombre-tipo"> Tipo: {listAmiiboAPI.type}</div>
-
       <div className="detalles">
 
       <Link to={'/detalles/' + listAmiiboAPI.tail} >
