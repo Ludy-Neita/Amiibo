@@ -4,7 +4,7 @@ import "../styleSheets/Item2.css";
 
 export default function Item2({ listAmiiboAPI, loading }) {
   //export default function Item2 ({ listAmiiboAPI, cantidadAmiibo, setCantidadAmiibo }) {
-  
+
   const navigate = useNavigate();
 
 
@@ -29,7 +29,7 @@ export default function Item2({ listAmiiboAPI, loading }) {
   */
   return (
 
-    
+
 
     <div className="lista-amiibos">
 
@@ -44,25 +44,24 @@ export default function Item2({ listAmiiboAPI, loading }) {
       <div className="nombre-tipo"> Tipo: {listAmiiboAPI.type}</div>
       <div className="detalles">
 
-      <Link to={'/detalles/' + listAmiiboAPI.tail} >
+
         <button
           className="button-detalles"
           target="_blank"
           color="black"
-         // onClick={() => navigate(`/detalles/${listAmiiboAPI.tail}`)}
-         
-          //onClick={() => Link {'/detalles/' + listAmiiboAPI.tail}}
+          onClick={() => navigate(`/detalles/${listAmiiboAPI.tail}`)}
+
         >
-            Más Detalles
+          Más Detalles
         </button>
 
-        </Link>
+
 
       </div>
 
     </div>
 
-    
+
 
   )
 }

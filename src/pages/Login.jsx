@@ -27,7 +27,7 @@ export default function Login() {
     }
   }
 
-  const [isLogin, setIsLogin] = useState(false);
+
   const [hayError, setHayError] = useState(false);
 
   const ifMatch = (param) => {
@@ -36,24 +36,24 @@ export default function Login() {
 
       if (param.usuario === "Ludy" && param.contraseña === "123456") {
 
-        const { usuario, contraseña } = param
+       const { usuario, contraseña } = param
 
-        let variableRegistro = { usuario, contraseña };
-        let registro = JSON.stringify(variableRegistro);
+       let variableRegistro = { usuario, contraseña };
+       let registro = JSON.stringify(variableRegistro);
 
-        localStorage.setItem("cuenta", registro);
-        
-        setIsLogin(true);
+       localStorage.setItem("cuenta", registro);
+      
+
         setHayError(false);
 
         navigate("/inicio")
 
       } else {
-        setIsLogin(false);
+     
         setHayError(true);
       }
     } else {
-      setIsLogin(false);
+  
       setHayError(true);
     }
   }

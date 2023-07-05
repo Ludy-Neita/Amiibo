@@ -1,16 +1,14 @@
-import { BrowserRouter, redirect, Route, Routes } from 'react-router-dom';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Login from "./pages/Login";
 import Inicio from "./pages/Inicio"
 import Detalles from "./pages/Detalles";
 import ProtegerRuta from "./components/ProtegerRuta"
 import { useLocalStorage } from 'react-use';
+import { useState } from 'react';
 
 
 function App() {
-
-  const [cuentaGuardada, setCuentaGuardada] = useLocalStorage("cuenta")
 
 
   return (
@@ -21,12 +19,12 @@ function App() {
 
         <Route path="/" element={<Login />} />
 
-        {/* <Route element={<ProtegerRuta registrado={cuentaGuardada} />}> */}
+        <Route element={<ProtegerRuta />}>
 
-        <Route path="/inicio" element={<Inicio />} />
-        <Route path="/detalles/:id" element={<Detalles />} />
+          <Route path="/inicio" element={<Inicio />} />
+          <Route path="/detalles/:tail" element={<Detalles />} />
 
-        {/* </Route> */}
+        </Route>
 
       </Routes>
 

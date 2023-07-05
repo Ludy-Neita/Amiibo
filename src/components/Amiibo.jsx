@@ -57,8 +57,6 @@ export default function Amiibo({ listAmiiboAPI }) {
             <p className="subtitulo-informacion">{listAmiiboAPI.release.eu} </p>
           </div>
 
-
-
         </div>
 
       </div>

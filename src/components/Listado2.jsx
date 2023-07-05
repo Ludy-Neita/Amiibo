@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Item2 from './Item2';
 import "../styleSheets/Listado2.css"
 
+import Amiibo from "../components/Amiibo"
 
 export default function Listado2({ resultadoFiltroAmiibo }) {
 
@@ -30,11 +31,20 @@ export default function Listado2({ resultadoFiltroAmiibo }) {
 
                 {resultadoFiltroAmiibo.map((amiiboAPI, index) =>
 
-                    <Item2
-                        key={index}
-                        listAmiiboAPI={amiiboAPI}
-                    />
 
+<Item2
+key={index}
+listAmiiboAPI={amiiboAPI}
+/>
+
+
+/*
+
+                    <Amiibo
+key={index}
+listAmiiboAPI={amiiboAPI}
+/>
+*/
 
                 )}
 
