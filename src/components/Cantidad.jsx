@@ -2,16 +2,13 @@ import { useState, useEffect } from "react"
 
 export default function Cantidad() {
 
-
-    const ENDPOINT = "https://amiiboapi.com/api/amiibo/";
-
     const [pagina, setPagina] = useState(1)
     const [datosActuales, setDatosActuales] = useState([])
 
     const [resultadoAmiibo, setResultadoAmiibo] = useState([]);
 
     useEffect(() => {
-        setDatosActuales(amiibosFiltrados.slice(0, 10 * pagina)) // datos del cero al 10. slice: cortar el arreglo.
+        setDatosActuales(resultadoAmiibo.slice(0, 10 * pagina)) // datos del cero al 10. slice: cortar el arreglo.
     }, [pagina])
 
     return (
