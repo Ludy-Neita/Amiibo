@@ -1,22 +1,53 @@
+.contendor-button-cerrar-sesion{
+   text-align: right;
+}
+
 .button-cerrar-sesion{
    width: 150px;
    height: 40px;
-   font-family: Arial, Helvetica, sans-serif;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
    cursor: pointer;
    font-size: 13px;
    align-items: center;
    margin: 25px auto;
    justify-content: center;
-   border: 2px dashed;
+   border: 1px solid;
    color: grey;
-   background: linear-gradient(to left, transparent 50%, rgb(233, 172, 59) 50%) no-repeat right/ 200%;
-   transition: background-position .3s ease;
+   background: linear-gradient(to left, transparent 50%, rgb(214, 70, 70) 50%) no-repeat right/ 200%;
+   
 }
 
 .button-cerrar-sesion:hover{
    background-position: left;
    color: rgb(233, 172, 59, 0.4);
    color: white;
+}
+
+.contendor-button-mas-amiibos{
+   display: flex;
+   align-items: right;
+}
+
+.button-mas-amiibos{
+   width: 150px;
+   height: 40px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   cursor: pointer;
+   font-size: 13px;
+   align-items: center;
+   margin: 25px auto;
+   justify-content: center;
+   border: none;
+   color: black;
+   background: linear-gradient(to left, rgb(209, 209, 209) 20%, rgb(118, 118, 118) 70%) no-repeat right/ 200%;
+   transition: background-position .3s ease;
+}
+
+.button-mas-amiibos:hover{
+   background-position: left;
+   border: none;
+   color: white;
+   
 }
 
   .Imagen-top{

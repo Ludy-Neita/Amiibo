@@ -2,6 +2,9 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { useNavigate } from 'react-router-dom';
 
+import {AiOutlineCloseCircle} from '@react-icons/all-files/ai/AiOutlineCloseCircle'
+import {IoIosArrowBack} from '@react-icons/all-files/io/IoIosArrowBack'
+
 import "../styleSheets/Detalles.css"
 
 export default function Detalles() {
@@ -47,7 +50,7 @@ export default function Detalles() {
 
     setAmiiboDetallado(temporal2)
     //  console.log(amiiboDetallado)
-   // console.log(temporal2.release.eu)
+    // console.log(temporal2.release.eu)
 
 
   }, [tail, amiibo2API])
@@ -56,6 +59,20 @@ export default function Detalles() {
 
 
     <div>
+
+      <div className="contendor-button-cerrar-sesion">
+
+      <button 
+      className="button-back"
+      onClick={() => navigate("/inicio")}>
+      <IoIosArrowBack/>  Back 
+      </button>
+
+        <button className="button-cerrar-sesion" onClick={cerrarSesion}>
+        <AiOutlineCloseCircle /> Cerrar Sesión
+        </button>
+
+      </div>
 
       <h1 className="character-amiibos">{amiiboDetallado?.character}</h1>
 
@@ -89,8 +106,8 @@ export default function Detalles() {
 
         <div className="contendor-informacion-un-amiibo">
 
-          <div className="juego-un-amiibo">
-            <p className="subtitulo"> Serie: </p>
+          <div className="seriejuego-un-amiibo">
+            <p className="subtitulo"> Serie de juego: </p>
             <p className="subtitulo-informacion">{amiiboDetallado?.gameSeries} </p>
           </div>
 
@@ -99,25 +116,23 @@ export default function Detalles() {
             <p className="subtitulo-informacion">{amiiboDetallado?.type} </p>
           </div>
 
-{/*
-              <div className="tipo-un-amiibo">
+          {/*
+              <div className="juego-un-amiibo">
                 <p className="subtitulo"> Juego: </p>
                 <p className="subtitulo-informacion">{amiiboDetallado?.games3DS[0].gameName} </p>
               </div>
-*/}
+
               <div className="disponible-un-amiibo">
                 <p className="subtitulo"> Disponible: </p>
                 <p className="subtitulo-informacion">{amiiboDetallado?.release.eu} </p>
               </div>
-  
+ */}
 
         </div>
 
       </div>
 
-      <button className="button-cerrar-sesion" onClick={cerrarSesion}>
-        Cerrar Sesión
-      </button>
+
     </div>
 
   )
