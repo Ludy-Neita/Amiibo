@@ -1,4 +1,4 @@
-.button-back{
+.button-back {
     width: 150px;
     height: 40px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -8,114 +8,129 @@
     margin: 25px;
     justify-content: center;
     border: 1px solid;
-    color: grey;
-    background: linear-gradient(to left, transparent 50%, rgb(70, 142, 214) 50%) no-repeat right/ 200%;
-    
- }
- 
- .button-back:hover{
-    background-position: left;
-    color: rgb(233, 172, 59, 0.4);
     color: white;
- }
+    background: linear-gradient(to left, rgb(70, 142, 214) 50%, transparent 50%) no-repeat right/ 200%;
+
+}
+
+.button-back:hover {
+    background-position: left;
+    color: grey;
+}
 
 .character-amiibos {
-background-color: rgb(220, 59, 172);
+   /* background-color: rgb(220, 59, 172); */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 50px;
+    font-size: 45px;
     text-align: center;
+    margin:0px;
 }
 
 .un-amiibos {
-    background-color: brown;
-    margin: 40px;
-    border: 2px solid gray;
+    /*background-color: brown;*/
+    
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 20px;
+
 }
 
 .contendor-img-nombre-serie {
-    background-color: rgb(42, 165, 56);
+    background-color: rgb(139, 192, 74, 0.9); 
     display: flex;
+    text-align: center;
+    align-items: center;
     margin: 10px;
-    margin-top: 30px;
+    justify-content: center;
 }
 
 .contendor-img-un-amiibo {
-    background-color: blueviolet;
+    /*background-color: blueviolet; */
     padding: 20px;
+    text-align: center;
+    align-items: center;
 
 }
 
 .img-un-amiibo {
-    background-color: rgb(250, 21, 0);
-    width: 100%;
-    height: 100%;
+    /*background-color: rgb(250, 21, 0); */
+   
 
 }
 
 .nombre-serie {
-    background-color: plum;
+    /*background-color: plum; */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     margin: 20px;
+    padding: 20px;
+
     align-items: center;
     text-align: center;
-    padding: 20px;
-    border-left: 2px solid black;
-    
+    border-left: 2px solid grey;
+
 }
 
 .contendor-informacion-un-amiibo {
-    background-color: rgb(240, 127, 255);
+    background-color: rgb(197, 35, 130, 0.9);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 25px;
     margin: 10px;
-    border-top: 2px solid black;
+    border-top: 2px solid rgb(172, 170, 170);
+    padding: 10px;
 }
 
 .nombre-un-amiibo {
-    background-color: aqua;
+    /*background-color: aqua; */
     display: flex;
+    margin: 15px;
 
 }
 
 .serie-un-amiibo {
-    background-color: green;
+    /*background-color: green; */
     display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 15px;
 }
 
 .seriejuego-un-amiibo {
-    background-color: palevioletred;
+    /*background-color: palevioletred; */
+    margin: 15px;
 
 }
 
 .tipo-un-amiibo {
-    background-color: blue;
-    
+    /*background-color: blue; */
+    margin: 15px;
+
 }
 
 .juego-un-amiibo {
-    background-color: rgb(71, 52, 58);
+    /*background-color: rgb(71, 52, 58); */
+    margin: 15px;
 }
 
 .disponible-un-amiibo {
-    background-color: darkgoldenrod;
+    /*background-color: darkgoldenrod; */
     display: inline-block;
 
 }
 
 .subtitulo {
-    background-color: salmon;
+    /* background-color: salmon; */
     font-weight: bold;
     text-align: center;
     align-items: center;
-    margin-bottom: 0px;
+    margin: 0px;
 }
 
 .subtitulo-informacion {
-    background-color: skyblue;
+    /*background-color: skyblue; */
     text-align: center;
     align-items: center;
-    margin-top: 0px;
+    margin: 0px;
     color: rgb(93, 92, 92);
 
 }

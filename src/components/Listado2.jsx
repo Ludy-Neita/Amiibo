@@ -1,58 +1,47 @@
-import { useState } from 'react';
-
-import Item2 from './Item2';
 import "../styleSheets/Listado2.css"
+import { useEffect, useState } from 'react';
+import { AiOutlinePlusSquare } from '@react-icons/all-files/ai/AiOutlinePlusSquare'
+import Item2 from './Item2';
 
-import Amiibo from "../components/Amiibo"
+export default function Listado2({ resultadoFiltroBusquedaAmiibo }) {
 
-export default function Listado2({ resultadoFiltroAmiibo }) {
+    // ------- Cantidad de Amiibos a mostrar  --------- //
 
+    const [pagina, setPagina] = useState(1)
+    const [amiibosCantidadMostrar, setAmiibosCantidadMostrar] = useState([])
 
-    const [buscar, setBuscar] = useState("")
-    const buscador = (e) => {
+    useEffect(() => {
 
-        setBuscar(e.target.value)
-        console.log(e.target.value)
-    }
+        setAmiibosCantidadMostrar(resultadoFiltroBusquedaAmiibo.slice(0, 4 * pagina)) // datos del cero al 10. slice: cortar el arreglo.
+
+    }, [pagina])
 
     return (
 
         <div className="amiibos-page">
 
-            <input
-                className='buscar'
-                value={buscar}
-                onChange={buscador}
-                type="text"
-                placeholder=" 🔍︎  Buscar">
-            </input>
+            <div className="contendor-button-mas-amiibos">
+                <button
+                    className="button-mas-amiibos"
+                    onClick={() =>
+                        setPagina((pagina) => pagina + 1)}
+                >
+                    <AiOutlinePlusSquare />  Cargar más
+                </button>
+            </div>
 
             <div className='contenedor-item' >
+                {amiibosCantidadMostrar.map((amiiboAPI, index) =>
 
-                {resultadoFiltroAmiibo.map((amiiboAPI, index) =>
-
-
-<Item2
-key={index}
-listAmiiboAPI={amiiboAPI}
-/>
-
-
-/*
-
-                    <Amiibo
-key={index}
-listAmiiboAPI={amiiboAPI}
-/>
-*/
+                    <Item2
+                        key={index}
+                        listAmiiboAPI={amiiboAPI}
+                    />
 
                 )}
-
             </div>
 
         </div>
-
     )
-
 }
 

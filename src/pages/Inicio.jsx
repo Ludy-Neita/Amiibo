@@ -1,15 +1,14 @@
+import "../styleSheets/Inicio.css"
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AiOutlineCloseCircle } from '@react-icons/all-files/ai/AiOutlineCloseCircle'
 import Filtro from "../components/Filtro";
 import Listado2 from "../components/Listado2"
-import "../styleSheets/Inicio.css"
-import { useNavigate } from 'react-router-dom';
-import {AiOutlineCloseCircle} from '@react-icons/all-files/ai/AiOutlineCloseCircle'
-import {AiOutlinePlusSquare} from '@react-icons/all-files/ai/AiOutlinePlusSquare'
-
 
 export default function Inicio() {
 
-    // obtener la información de la API
+    // --------- OBTENER INFORMACIÓN DE LA API --------- //
+
     const [resultadoAmiibo, setResultadoAmiibo] = useState([]);
 
     useEffect(() => {
@@ -22,47 +21,51 @@ export default function Inicio() {
 
             setResultadoAmiibo(informacionAPIJson.amiibo);
 
-            console.log(resultadoAmiibo);
-
         }
         consultarAPI();
 
     }, [])
 
-        // ------- Cantidad de Amiibos a mostrar.
-
-        const [pagina, setPagina] = useState(1)
-        const [datosActuales, setDatosActuales] = useState([])
-    
-        useEffect(() => {
-            setDatosActuales(resultadoAmiibo.slice(0, 4 * pagina)) // datos del cero al 10. slice: cortar el arreglo.
-        
-        }, [pagina])
-    
-    
-        console.log(datosActuales)
-    
-        //---------
+    // --------- HACER FILTRO --------- //
 
     const [filtros, setFiltros] = useState(null)
     const [amiibosFiltrados, setAmiibosFiltrados] = useState([])
 
     useEffect(() => {
 
-        // filtrar el array de la API, se coloca una varible x 
-        // y esta se le que guarda los datos del "type" y se comprara si estos datos son igual a los de filtros
-        let variableTemporal = resultadoAmiibo?.filter(product => product.type === filtros)
-        // se guarda en una varible temporal el resultado del filtro.
+        if (!filtros) { // si no hay filtro que muestre todos los amiibos, pero solo los 4.
+
+            setAmiibosFiltrados(resultadoAmiibo)
+
+        } else {
+            let variableTemporalFiltro = resultadoAmiibo?.filter(product => product.type === filtros)  // filtrar el array de la API, se coloca una varible x "product" y esta se le que guarda los datos del "type" y se comprara si estos datos son igual a los de filtros
+            // se guarda en una varible temporal el resultado del filtro.
+
+            setAmiibosFiltrados(variableTemporalFiltro)
+        }
+    }, [filtros, resultadoAmiibo]) // se coloca "filtros" para que el useEffect se actualice cada vez que cambia el filtro.
+
+    // --------- HACER BÚSQUEDA --------- //
+
+    const [buscar, setBuscar] = useState("")
+
+    const [amiibosBuscados, setAmiibosBuscados] = useState(filtros)
+
+    useEffect(() => {
+
+        if (buscar !== '') {
+
+            // amiibosFiltrados, son los datos filtrados o todos los datos si no se hace la opcion de filtro.
+            let variableTemporalBusqueda = amiibosFiltrados.filter(obj => obj.name.includes(buscar)); //Busca en los nombres que incluyan la palabra de la busqueda
+            setAmiibosBuscados(variableTemporalBusqueda)
+
+        } else {
+            setAmiibosBuscados(amiibosFiltrados) //Seteamos el valor de los amiibos buscados
+        }
+    }, [buscar, amiibosFiltrados])  //Cada vez que cambie el buscar o si le cambio el filtro
 
 
-        setAmiibosFiltrados(variableTemporal)
-
-
-    }, [filtros]) // se coloca "filtros" para que el useEffect se actualice cada vez que cambia el filtro o la selección del tipo de Amiibo.
-
-
-
-    // Botón de cerrar sesión 
+    // ---------  BOTÓN CERRAR SESIÓN ---------  //
 
     const navigate = useNavigate()
     const cerrarSesion = () => {
@@ -83,32 +86,23 @@ export default function Inicio() {
                     className="button-cerrar-sesion"
                     onClick={cerrarSesion}
                 >
-                    <AiOutlineCloseCircle/> Cerrar Sesión
+                    <AiOutlineCloseCircle /> Cerrar Sesión
                 </button>
-
             </div>
 
-            <div className="contendor-button-mas-amiibos">
-
-                <button
-                    className="button-mas-amiibos"
-                    onClick={() =>
-                        setPagina((pagina) => pagina + 1)}
-                >
-                <AiOutlinePlusSquare/>  Cargar más </button>
-            </div>
+            <input
+                className='buscar'
+                onChange={(e) => setBuscar(e.target.value)}
+                type="text"
+                placeholder=" 🔍︎  Buscar">
+            </input>
 
             <Filtro
                 setFiltros={setFiltros} />
 
-            {console.log(amiibosFiltrados)}
-
             <Listado2
-                //  si hay datos en el filtro (amiibosFiltrados), pase a Listado2 el array que se filtró, y si no, pase completo el array de la API (resultadoAmiibo)
-                resultadoFiltroAmiibo={amiibosFiltrados.length !== 0 ? amiibosFiltrados : datosActuales} />
-
-
+                //  si se hace busqueda pasar los amiibos que tienen el nombre buscado, si no, pasar "amiibosFiltrados" que es el array que se filtró o puede ser el array de la API (resultadoAmiibo)
+                resultadoFiltroBusquedaAmiibo={amiibosBuscados !== null ? amiibosBuscados : amiibosFiltrados} />
         </div>
-
     );
 }

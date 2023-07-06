@@ -1,7 +1,7 @@
-import '../styleSheets/Login.css';
-import ImgTitulo from "../img/Titulo.png"
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ImgTitulo from "../img/Titulo.png"
+import '../styleSheets/Login.css';
 
 export default function Login() {
 
@@ -73,9 +73,9 @@ export default function Login() {
 
       <div className="contenedor-inicial">
 
-        <h1 className='bienvenido'>¡WELCOME!</h1>
+        <h1 className='bienvenido'>¡Bienvenido!</h1>
 
-        <label className="label-normal">User:</label>
+        <label className="label-normal">Usuario:</label>
 
         <input
           className="input-normal"
@@ -85,7 +85,7 @@ export default function Login() {
         </input>
 
 
-        <label className="label-normal">Password:</label>
+        <label className="label-normal">Constraseña:</label>
 
         <input
           className={contraseñaError ? "input-error" : "input-normal"}
@@ -98,7 +98,7 @@ export default function Login() {
 
         {contraseñaError &&
           <label className="label-error">
-            Password must be more than 6 characters
+            La contraseña debe tener más de 6 caracteres
           </label>
         }
 
@@ -108,7 +108,7 @@ export default function Login() {
 
         {hayError &&
           <label className="error-general">
-            ¡The username or password is invalid!!
+            ¡El usuario o la contraseña son inválidos!
           </label>
         }
       </div>

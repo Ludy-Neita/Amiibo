@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { useNavigate } from 'react-router-dom';
-
-import {AiOutlineCloseCircle} from '@react-icons/all-files/ai/AiOutlineCloseCircle'
-import {IoIosArrowBack} from '@react-icons/all-files/io/IoIosArrowBack'
-
+import { AiOutlineCloseCircle } from '@react-icons/all-files/ai/AiOutlineCloseCircle'
+import { IoIosArrowBack } from '@react-icons/all-files/io/IoIosArrowBack'
 import "../styleSheets/Detalles.css"
 
 export default function Detalles() {
+
+  // --------- BOTÓN CERRAR SESIÓN --------- //
 
   const navigate = useNavigate()
 
@@ -17,6 +17,7 @@ export default function Detalles() {
     navigate('/');
   };
 
+  // --------- OBTENER INFORMACIÓN DE LA API NUEVAMENTE  --------- //
 
   const [amiibo2API, setAmiibo2API] = useState([]);
 
@@ -28,12 +29,11 @@ export default function Detalles() {
 
     setAmiibo2API(informacion2APIJson.amiibo);
 
-    console.log(amiibo2API)
-
   }
 
-  const [amiiboDetallado, setAmiiboDetallado] = useState({})
+  // --------- OBTENER INFORMACIÓN DE SOLO UN AMIIBO POR TAIL (ID) --------- //
 
+  const [amiiboDetallado, setAmiiboDetallado] = useState({})
 
   let { tail } = useParams() // esto viene de item2
 
@@ -43,33 +43,25 @@ export default function Detalles() {
 
     let temporal = amiibo2API?.filter(unAmiibo => unAmiibo.tail === tail)
     let temporal2 = temporal[0]
-    // console.log(typeoff tail)
-
-    //  console.log(temporal)
-
 
     setAmiiboDetallado(temporal2)
-    //  console.log(amiiboDetallado)
-    // console.log(temporal2.release.eu)
-
 
   }, [tail, amiibo2API])
 
   return (
 
-
     <div>
 
       <div className="contendor-button-cerrar-sesion">
 
-      <button 
-      className="button-back"
-      onClick={() => navigate("/inicio")}>
-      <IoIosArrowBack/>  Back 
-      </button>
+        <button
+          className="button-back"
+          onClick={() => navigate("/inicio")}>
+          <IoIosArrowBack />  Regresar
+        </button>
 
         <button className="button-cerrar-sesion" onClick={cerrarSesion}>
-        <AiOutlineCloseCircle /> Cerrar Sesión
+          <AiOutlineCloseCircle /> Cerrar Sesión
         </button>
 
       </div>
@@ -92,12 +84,12 @@ export default function Detalles() {
 
             <div className="nombre-un-amiibo">
               <p className="subtitulo"> Nombre: </p>
-              <p className="subtitulo-informacion">{amiiboDetallado?.name} </p>
+              <p className="subtitulo-informacion"> {amiiboDetallado?.name} </p>
             </div>
 
             <div className="serie-un-amiibo">
               <p className="subtitulo"> Serie: </p>
-              <p className="subtitulo-informacion">{amiiboDetallado?.amiiboSeries} </p>
+              <p className="subtitulo-informacion"> {amiiboDetallado?.amiiboSeries} </p>
             </div>
 
           </div>
@@ -126,14 +118,12 @@ export default function Detalles() {
                 <p className="subtitulo"> Disponible: </p>
                 <p className="subtitulo-informacion">{amiiboDetallado?.release.eu} </p>
               </div>
- */}
+           */}
 
         </div>
 
       </div>
 
-
     </div>
-
   )
 }

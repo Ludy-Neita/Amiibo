@@ -1,13 +1,11 @@
-import { useNavigate, Link } from "react-router-dom"
-
+import { useNavigate } from "react-router-dom"
 import "../styleSheets/Item2.css";
 
 export default function Item2({ listAmiiboAPI, loading }) {
-  //export default function Item2 ({ listAmiiboAPI, cantidadAmiibo, setCantidadAmiibo }) {
-
+  
   const navigate = useNavigate();
 
-
+  /*
   if (loading) {
     return (
       <Dimmer active inverted>
@@ -15,21 +13,9 @@ export default function Item2({ listAmiiboAPI, loading }) {
       </Dimmer>
     );
   }
-
-  /*
-      const { resultadoAmiibo } = resultadoAmiibo.data;
-  
-      const cargarMoreAmiibos = () => {
-  
-          const numberAmiibos = cantidadAmiibo;
-          setCantidadAmiibo(numberAmiibos + 5);
-  
-      };
-  
   */
+
   return (
-
-
 
     <div className="lista-amiibos">
 
@@ -42,27 +28,19 @@ export default function Item2({ listAmiiboAPI, loading }) {
       />
 
       <div className="nombre-tipo"> Tipo: {listAmiiboAPI.type}</div>
+
       <div className="detalles">
-
-
         <button
           className="button-detalles"
           target="_blank"
           color="black"
           onClick={() => navigate(`/detalles/${listAmiiboAPI.tail}`)}
-
         >
           Más Detalles
         </button>
-
-
-
       </div>
 
     </div>
-
-
-
   )
 }
 
