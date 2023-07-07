@@ -1,73 +1,47 @@
+import { FcFilledFilter } from '@react-icons/all-files/fc/FcFilledFilter'
+import DatosFiltro from "../data/DatosFiltro.json"
+import "../styleSheets/Filtro.css"
 
-import "../styleSheets/Detalles.css"
+import { useState } from 'react'
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
 
-export default function Amiibo({ listAmiiboAPI }) {
+export default function Filtro({ setFiltros }) {
+
+  const [dropDown, setDropDown] = useState(false);
+
+  const abrircerrarDropDown = () => {
+
+    setDropDown(!dropDown);
+  }
 
   return (
+    <div className="contenedor-filtro">
 
-    <div>
+      <Dropdown isOpen={dropDown} taggle={abrircerrarDropDown}>
 
-      <h1 className="character-amiibos">{listAmiiboAPI.character}</h1>
+        <DropdownToggle caret className="titulo-filtro">
+          <FcFilledFilter /> Filtro por tipo
+        </DropdownToggle>
 
-      <div className="un-amiibos">
+        <DropdownMenu className="contenedor-boton-filtro">
+          {DatosFiltro.map((tipo) =>
+            <DropdownItem header key={tipo.type}>
 
-        <div className="contendor-img-nombre-serie">
-          
-          <div className="contendor-img-un-amiibo">
-            <img
-              className="img-un-amiibo"
-              src={listAmiiboAPI.image}
-              alt="Imagen del amiibo"
-            />
-          </div>
+              <DropdownItem className="boton-filtro" onClick={() => setFiltros(tipo.type)}>{tipo.type}</DropdownItem>
 
-          <div className="nombre-serie">
-
-            <div className="nombre-un-amiibo">
-              <p className="subtitulo"> Nombre: </p>
-              <p className="subtitulo-informacion">{listAmiiboAPI.name} </p>
-            </div>
-
-            <div className="serie-un-amiibo">
-              <p className="subtitulo"> Serie: </p>
-              <p className="subtitulo-informacion">{listAmiiboAPI.amiiboSeries} </p>
-            </div>
-
-          </div>
+            </DropdownItem>
+          )}
+        </DropdownMenu>
 
 
-        </div>
+        <DropdownItem className="boton-filtro" onClick={() => setFiltros(null)}>
+          Todos los tipos
+        </DropdownItem>
 
-        <div className="contendor-informacion-un-amiibo">
+      </Dropdown>
 
-
-
-          <div className="juego-un-amiibo">
-            <p className="subtitulo"> Juego: </p>
-            <p className="subtitulo-informacion">{listAmiiboAPI.gameSeries} </p>
-          </div>
-
-          <div className="tipo-un-amiibo">
-            <p className="subtitulo"> Tipo: </p>
-            <p className="subtitulo-informacion">{listAmiiboAPI.type} </p>
-          </div>
-
-          <div className="disponible-un-amiibo">
-            <p className="subtitulo"> Disponible: </p>
-            <p className="subtitulo-informacion">{listAmiiboAPI.release.eu} </p>
-          </div>
-
-        </div>
-
-      </div>
-
-      <button className="button-cerrar-sesion">
-        Cerrar Sesión
-      </button>
     </div>
   )
 
-
-};
-
-
+}

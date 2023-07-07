@@ -21,15 +21,20 @@ export default function Detalles() {
 
   const [amiibo2API, setAmiibo2API] = useState([]);
 
-  const consulta2API = async () => {
+  useEffect(() => {
 
-    const url = "https://amiiboapi.com/api/amiibo/?showgames"
-    const respuesta2API = await fetch(url);
-    const informacion2APIJson = await respuesta2API.json();
+    const consulta2API = async () => {
 
-    setAmiibo2API(informacion2APIJson.amiibo);
+      const url = "https://amiiboapi.com/api/amiibo/?showgames"
+      const respuesta2API = await fetch(url);
+      const informacion2APIJson = await respuesta2API.json();
 
-  }
+      setAmiibo2API(informacion2APIJson.amiibo);
+
+    }
+    consulta2API();
+
+  }, [])
 
   // --------- OBTENER INFORMACIÓN DE SOLO UN AMIIBO POR TAIL (ID) --------- //
 
@@ -39,7 +44,6 @@ export default function Detalles() {
 
   useEffect(() => {
 
-    consulta2API();
 
     let temporal = amiibo2API?.filter(unAmiibo => unAmiibo.tail === tail)
     let temporal2 = temporal[0]
@@ -116,7 +120,7 @@ export default function Detalles() {
 
               <div className="disponible-un-amiibo">
                 <p className="subtitulo"> Disponible: </p>
-                <p className="subtitulo-informacion">{amiiboDetallado?.release.eu} </p>
+                <p className="subtitulo-informacion">{amiiboDetallado?.release.jp} </p>
               </div>
            */}
 

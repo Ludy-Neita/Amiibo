@@ -20,15 +20,6 @@ export default function Listado2({ resultadoFiltroBusquedaAmiibo }) {
 
         <div className="amiibos-page">
 
-            <div className="contendor-button-mas-amiibos">
-                <button
-                    className="button-mas-amiibos"
-                    onClick={() =>
-                        setPagina((pagina) => pagina + 1)}
-                >
-                    <AiOutlinePlusSquare />  Cargar más
-                </button>
-            </div>
 
             <div className='contenedor-item' >
                 {amiibosCantidadMostrar.map((amiiboAPI, index) =>
@@ -41,6 +32,16 @@ export default function Listado2({ resultadoFiltroBusquedaAmiibo }) {
                 )}
             </div>
 
+            <div className="contendor-button-mas-amiibos">
+                <button
+                    className="button-mas-amiibos"
+                    onClick={() =>
+                        setPagina((pagina) => pagina + 1)}
+                >
+                    <AiOutlinePlusSquare />  Cargar más
+                </button>
+            </div>
+            
         </div>
     )
 }

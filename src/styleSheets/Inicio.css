@@ -1,4 +1,11 @@
-
+.titulo-inicial{
+   font-size: 30px;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   color: black;
+   text-align: center;
+   text-transform: uppercase;
+   margin-top: 20px;
+}
 
 .contendor-button-cerrar-sesion{
    text-align: right;
@@ -12,6 +19,7 @@
    font-size: 13px;
    align-items: center;
    margin: 25px auto;
+   margin-right: 35px;
    justify-content: center;
    border: 1px solid;
    color: grey;
@@ -35,27 +43,24 @@
    background-color: rgba(212, 110, 144, 0.6);
    border: 1px solid rgb(212, 110, 144);
    padding-left: 20px;
-   margin-bottom: 30px;
    box-shadow: 4px 4px 4px grey;
+   margin-left: 35px;
  }
 
 
-  .Imagen-top{
+  .imagen-top{
    background-image: url("../img/amiibos2.png");
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
+   height: 25vh;
 
-
-   width: 100%;
-   height: 30vh;
-  
 }
+@media screen and (min-width: 720px) {
 
-.Titulo-inicial{
-   font-size: 30px;
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   color: black;
-   text-align: center;
-   text-transform: uppercase;
-}
+   .imagen-top{
+      height: 45vh;
+   }
+ 
+ }
+

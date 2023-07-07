@@ -1,41 +1,47 @@
-import {FcFilledFilter} from '@react-icons/all-files/fc/FcFilledFilter'
+import { FcFilledFilter } from '@react-icons/all-files/fc/FcFilledFilter'
 import DatosFiltro from "../data/DatosFiltro.json"
 import "../styleSheets/Filtro.css"
 
+import { useState } from 'react'
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
+
 export default function Filtro({ setFiltros }) {
 
+    const [dropDown, setDropDown] = useState(false);
+
+    const abrircerrarDropDown = () => {
+
+        setDropDown(!dropDown);
+    }
+
     return (
-        <div>
+        <div className="contenedor-filtro">
 
-           <a className="Titulo-filtro"> <FcFilledFilter /> Filtro por tipo </a>
+            <Dropdown isOpen={dropDown} toggle={abrircerrarDropDown} direction="down">
 
-            <div className="contenedor-boton-filtro">
+                <DropdownToggle caret className="titulo-filtro">
+                    <FcFilledFilter /> Filtro por tipo
+                </DropdownToggle>
 
-                {DatosFiltro.map((tipo) =>
+                <DropdownMenu className="contenedor-boton-filtro">
 
-                    <div key={tipo.type}>
-                        <button
-                            className="boton-filtro"
-                            onClick={() => setFiltros(tipo.type)}
-                        >
-                            {tipo.type}
-                        </button>
-                    </div>
+                    {DatosFiltro.map((tipo) =>
+                        <DropdownItem header key={tipo.type}>
+                            <DropdownItem className="boton-filtro" onClick={() => setFiltros(tipo.type)}>{tipo.type}</DropdownItem>
+                        </DropdownItem>
+                    )}
 
-                )}
-
-                <div>
-                    <button
-                        className="boton-filtro"
-                        onClick={() => setFiltros(null)}
-                    >
+                    <DropdownItem divider />
+                    <DropdownItem className="boton-filtro" onClick={() => setFiltros(null)}>
                         Todos los tipos
-                    </button>
-                </div>
+                    </DropdownItem>
 
-            </div>
+                </DropdownMenu>
 
-            </div>
+            </Dropdown>
+
+        </div>
     )
 
-};
+}

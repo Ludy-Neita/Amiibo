@@ -77,9 +77,9 @@ export default function Inicio() {
     return (
 
         <div>
-            <div className="Imagen-top"> </div>
+            <div className="imagen-top"> </div>
 
-            <h1 className='Titulo-inicial'>Los mejores Amiibos</h1>
+            <h1 className='titulo-inicial'>Los mejores Amiibos</h1>
 
             <div className="contendor-button-cerrar-sesion">
                 <button
