@@ -102,7 +102,9 @@ export default function Inicio() {
 
             <Listado2
                 //  si se hace busqueda pasar los amiibos que tienen el nombre buscado, si no, pasar "amiibosFiltrados" que es el array que se filtró o puede ser el array de la API (resultadoAmiibo)
-                resultadoFiltroBusquedaAmiibo={amiibosBuscados !== null ? amiibosBuscados : amiibosFiltrados} />
+                resultadoFiltroBusquedaAmiibo={amiibosBuscados !== null ? amiibosBuscados : amiibosFiltrados}
+                filtro={filtros}
+            />
         </div>
     );
 }

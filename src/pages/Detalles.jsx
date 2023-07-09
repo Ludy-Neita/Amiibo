@@ -112,6 +112,8 @@ export default function Detalles() {
             <p className="subtitulo-informacion">{amiiboDetallado?.type} </p>
           </div>
 
+          {console.log(amiiboDetallado?.release)}
+          {console.log(amiiboDetallado?.games3DS)}
           {/*
               <div className="juego-un-amiibo">
                 <p className="subtitulo"> Juego: </p>

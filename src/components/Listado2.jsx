@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { AiOutlinePlusSquare } from '@react-icons/all-files/ai/AiOutlinePlusSquare'
 import Item2 from './Item2';
 
-export default function Listado2({ resultadoFiltroBusquedaAmiibo }) {
+export default function Listado2({ resultadoFiltroBusquedaAmiibo, filtro }) {
 
     // ------- Cantidad de Amiibos a mostrar  --------- //
 
@@ -14,7 +14,15 @@ export default function Listado2({ resultadoFiltroBusquedaAmiibo }) {
 
         setAmiibosCantidadMostrar(resultadoFiltroBusquedaAmiibo.slice(0, 4 * pagina)) // datos del cero al 10. slice: cortar el arreglo.
 
-    }, [pagina])
+    }, [pagina, resultadoFiltroBusquedaAmiibo]) 
+    // cada que cambie la pagina o el resultadoFiltroBusquedaAmiibo se vuelva a ejecutar el useEffect.
+
+    /*
+        useEffect (() => {
+            setPagina(1)
+        },[filtro])
+    
+    */
 
     return (
 
@@ -41,7 +49,7 @@ export default function Listado2({ resultadoFiltroBusquedaAmiibo }) {
                     <AiOutlinePlusSquare />  Cargar más
                 </button>
             </div>
-            
+
         </div>
     )
 }
