@@ -5,7 +5,7 @@ import Item2 from './Item2';
 
 export default function Listado2({ resultadoFiltroBusquedaAmiibo, filtro }) {
 
-    // ------- Cantidad de Amiibos a mostrar  --------- //
+    // ------- CANTIDAD DE AMIIBOS A MOSTRAR  --------- //
 
     const [pagina, setPagina] = useState(1)
     const [amiibosCantidadMostrar, setAmiibosCantidadMostrar] = useState([])
@@ -14,20 +14,16 @@ export default function Listado2({ resultadoFiltroBusquedaAmiibo, filtro }) {
 
         setAmiibosCantidadMostrar(resultadoFiltroBusquedaAmiibo.slice(0, 4 * pagina)) // datos del cero al 10. slice: cortar el arreglo.
 
-    }, [pagina, resultadoFiltroBusquedaAmiibo]) 
+    }, [pagina, resultadoFiltroBusquedaAmiibo])
     // cada que cambie la pagina o el resultadoFiltroBusquedaAmiibo se vuelva a ejecutar el useEffect.
 
-    /*
-        useEffect (() => {
-            setPagina(1)
-        },[filtro])
-    
-    */
+    useEffect(() => {
+        setPagina(1)
+    }, [filtro])
 
     return (
 
         <div className="amiibos-page">
-
 
             <div className='contenedor-item' >
                 {amiibosCantidadMostrar.map((amiiboAPI, index) =>

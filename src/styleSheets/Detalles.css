@@ -10,7 +10,6 @@
     border: 1px solid;
     color: white;
     background: linear-gradient(to left, rgb(70, 142, 214) 50%, transparent 50%) no-repeat right/ 200%;
-
 }
 
 .button-back:hover {
@@ -28,11 +27,9 @@
 
 .un-amiibos {
     /*background-color: brown;*/
-    
     margin-left: 40px;
     margin-right: 40px;
     padding: 20px;
-
 }
 
 .contendor-img-nombre-serie {
@@ -43,7 +40,6 @@
     margin: 10px;
     justify-content: center;
     height: 200px;
-   
 }
 
 @media screen and (min-width: 600px) {
@@ -75,17 +71,14 @@
     /*background-color: rgb(250, 21, 0); */
     width: 100%;
     height: 100%;
-
 }
 
 .nombre-serie {
     /*background-color: plum; */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   
     align-items: center;
     text-align: center;
     border-left: 2px solid grey;
-
 }
 
 .contendor-informacion-un-amiibo {
@@ -111,25 +104,29 @@
     margin: 15px;
 }
 
+/*
 .seriejuego-un-amiibo {
-    /*background-color: palevioletred; */
+    /*background-color: palevioletred; 
     margin: 15px;
-
 }
 
 .tipo-un-amiibo {
-    /*background-color: blue; */
+    /*background-color: blue; 
     margin: 15px;
-
 }
 
 .juego-un-amiibo {
-    /*background-color: rgb(71, 52, 58); */
+    /*background-color: rgb(71, 52, 58); 
     margin: 15px;
 }
 
 .disponible-un-amiibo {
-    /*background-color: darkgoldenrod; */
+    /*background-color: darkgoldenrod;
+    margin: 15px;
+}
+
+*/
+.seriejuego-un-amiibo, .tipo-un-amiibo, .juego-un-amiibo, .disponible-un-amiibo {
     margin: 15px;
 }
 
@@ -147,5 +144,4 @@
     align-items: center;
     margin: 0px;
     color: rgb(93, 92, 92);
-
 }

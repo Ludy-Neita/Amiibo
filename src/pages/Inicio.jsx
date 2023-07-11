@@ -86,8 +86,10 @@ export default function Inicio() {
                     className="button-cerrar-sesion"
                     onClick={cerrarSesion}
                 >
-                    <AiOutlineCloseCircle /> Cerrar Sesión
+                     <AiOutlineCloseCircle /> Cerrar Sesión
                 </button>
+
+                
             </div>
 
             <input

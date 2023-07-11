@@ -1,4 +1,4 @@
-import { FcFilledFilter } from '@react-icons/all-files/fc/FcFilledFilter'
+/*import { FcFilledFilter } from '@react-icons/all-files/fc/FcFilledFilter'
 import DatosFiltro from "../data/DatosFiltro.json"
 import "../styleSheets/Filtro.css"
 
@@ -39,3 +39,5 @@ export default function Filtro({ setFiltros }) {
     )
 
 };
+
+*/

@@ -112,19 +112,18 @@ export default function Detalles() {
             <p className="subtitulo-informacion">{amiiboDetallado?.type} </p>
           </div>
 
-          {console.log(amiiboDetallado?.release)}
-          {console.log(amiiboDetallado?.games3DS)}
-          {/*
-              <div className="juego-un-amiibo">
-                <p className="subtitulo"> Juego: </p>
-                <p className="subtitulo-informacion">{amiiboDetallado?.games3DS[0].gameName} </p>
-              </div>
+          {amiiboDetallado?.games3DS &&
+            <div className="juego-un-amiibo">
+              <p className="subtitulo"> Juego: </p>
+              <p className="subtitulo-informacion">{amiiboDetallado?.games3DS[0].gameName} </p>
+            </div>
+          }
 
-              <div className="disponible-un-amiibo">
-                <p className="subtitulo"> Disponible: </p>
-                <p className="subtitulo-informacion">{amiiboDetallado?.release.jp} </p>
-              </div>
-           */}
+          <div className="disponible-un-amiibo">
+            <p className="subtitulo"> Disponible: </p>
+            <p className="subtitulo-informacion">{amiiboDetallado?.release?.jp} </p>
+          </div>
+
 
         </div>
 
