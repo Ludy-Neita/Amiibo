@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { useNavigate } from 'react-router-dom';
-import { AiOutlineCloseCircle } from '@react-icons/all-files/ai/AiOutlineCloseCircle'
-import { IoIosArrowBack } from '@react-icons/all-files/io/IoIosArrowBack'
+import { AiOutlineCloseCircle } from '@react-icons/all-files/ai/AiOutlineCloseCircle'  // esto es el icono de x.
+import { IoIosArrowBack } from '@react-icons/all-files/io/IoIosArrowBack'// esto es el icono de regresar.
 import "../styleSheets/Detalles.css"
 
 export default function Detalles() {
@@ -40,13 +40,12 @@ export default function Detalles() {
 
   const [amiiboDetallado, setAmiiboDetallado] = useState({})
 
-  let { tail } = useParams() // esto viene de item2
+  let { tail } = useParams() // esto viene del componente "item2". Tail es un # de la API para cada Amiibo.
 
   useEffect(() => {
 
-
     let temporal = amiibo2API?.filter(unAmiibo => unAmiibo.tail === tail)
-    let temporal2 = temporal[0]
+    let temporal2 = temporal[0] // que solo capture la posición 0 del array.
 
     setAmiiboDetallado(temporal2)
 
@@ -79,7 +78,7 @@ export default function Detalles() {
           <div className="contendor-img-un-amiibo">
             <img
               className="img-un-amiibo"
-              src={amiiboDetallado?.image}
+              src={amiiboDetallado?.image} // se coloca en todos el "?" para que no se muestre error si no hay dato.
               alt="Imagen del amiibo"
             />
           </div>
@@ -112,7 +111,7 @@ export default function Detalles() {
             <p className="subtitulo-informacion">{amiiboDetallado?.type} </p>
           </div>
 
-          {amiiboDetallado?.games3DS &&
+          {amiiboDetallado?.games3DS && // Si hay datos muestre la info. si no, no haga nada. 
             <div className="juego-un-amiibo">
               <p className="subtitulo"> Juego: </p>
               <p className="subtitulo-informacion">{amiiboDetallado?.games3DS[0].gameName} </p>
@@ -123,7 +122,6 @@ export default function Detalles() {
             <p className="subtitulo"> Disponible: </p>
             <p className="subtitulo-informacion">{amiiboDetallado?.release?.jp} </p>
           </div>
-
 
         </div>
 

@@ -2,15 +2,13 @@ import { Navigate, Outlet } from "react-router-dom"
 
 export default function ProtegerRuta() {
 
-  // isLogged mira si en el localStorage hay datos en "cuenta"
-  let isLogged = localStorage.getItem("cuenta")
+  let isLogged = localStorage.getItem("cuenta") // isLogged mira si en el localStorage hay datos en "cuenta" que se definió en la page de "Login"
 
-  // si no hay datos me lleve a la pagina inicial
-  if (!isLogged) {
+  if (!isLogged) { // si no hay datos me lleva a la pagina inicial
     return <Navigate to="/" />
   }
-  // si hay, datos se da el permiso a los children, es decir a las otras rutas.
+
   return (
-    <Outlet />
+    <Outlet /> // si hay datos, se da el permiso a los children, es decir a las otras ruta que envuelve este componente.
   )
 }

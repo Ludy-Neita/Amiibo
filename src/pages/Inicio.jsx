@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { AiOutlineCloseCircle } from '@react-icons/all-files/ai/AiOutlineCloseCircle'
 import Filtro from "../components/Filtro";
 import Listado2 from "../components/Listado2"
+import ImgTop from "../img/Picture2.png"
 
 export default function Inicio() {
 
@@ -62,7 +63,7 @@ export default function Inicio() {
         } else {
             setAmiibosBuscados(amiibosFiltrados) //Seteamos el valor de los amiibos buscados
         }
-    }, [buscar, amiibosFiltrados])  //Cada vez que cambie el buscar o si le cambio el filtro
+    }, [buscar, amiibosFiltrados])  //Cada vez que cambie el buscar o el filtro
 
 
     // ---------  BOTÓN CERRAR SESIÓN ---------  //
@@ -77,19 +78,21 @@ export default function Inicio() {
     return (
 
         <div>
-            <div className="imagen-top"> </div>
-
-            <h1 className='titulo-inicial'>Los mejores Amiibos</h1>
+            <div className="imagen-top">
+                <img
+                    src={ImgTop}
+                    className="imgTOP"
+                    alt="imagen top"
+                />
+            </div>
 
             <div className="contendor-button-cerrar-sesion">
                 <button
                     className="button-cerrar-sesion"
                     onClick={cerrarSesion}
                 >
-                     <AiOutlineCloseCircle /> Cerrar Sesión
+                    <AiOutlineCloseCircle /> Cerrar Sesión
                 </button>
-
-                
             </div>
 
             <input
@@ -100,10 +103,11 @@ export default function Inicio() {
             </input>
 
             <Filtro
-                setFiltros={setFiltros} />
+                setFiltros={setFiltros}
+            />
 
             <Listado2
-                //  si se hace busqueda pasar los amiibos que tienen el nombre buscado, si no, pasar "amiibosFiltrados" que es el array que se filtró o puede ser el array de la API (resultadoAmiibo)
+                //  si se utiliza el input de "busqueda" pasar los amiibos que tienen el nombre buscado, si no, pasar "amiibosFiltrados" que es el array que se filtró (si se hizo filtro), si no se hizo filtro que pase el array de la API (resultadoAmiibo)
                 resultadoFiltroBusquedaAmiibo={amiibosBuscados !== null ? amiibosBuscados : amiibosFiltrados}
                 filtro={filtros}
             />

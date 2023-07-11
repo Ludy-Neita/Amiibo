@@ -1,19 +1,9 @@
 import { useNavigate } from "react-router-dom"
 import "../styleSheets/Item2.css";
 
-export default function Item2({ listAmiiboAPI, loading }) {
+export default function Item2({ listAmiiboAPI }) { // props. del componente "Listado2"
   
   const navigate = useNavigate();
-
-  /*
-  if (loading) {
-    return (
-      <Dimmer active inverted>
-        <Loader inverted> Cargando más Amiibos...no se vaya!...</Loader>
-      </Dimmer>
-    );
-  }
-  */
 
   return (
 

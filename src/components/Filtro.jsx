@@ -1,17 +1,17 @@
-import { FcFilledFilter } from '@react-icons/all-files/fc/FcFilledFilter'
+import { useState } from 'react'
+import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap'; // esto es para el despegable el filtro.
+import { FcFilledFilter } from '@react-icons/all-files/fc/FcFilledFilter' // esto es el icono de filtro.
 import DatosFiltro from "../data/DatosFiltro.json"
 import "../styleSheets/Filtro.css"
-
-import { useState } from 'react'
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
+import "bootstrap/dist/css/bootstrap.min.css"; // esto es el CSS para el despegable del filtro.
 
 export default function Filtro({ setFiltros }) {
+
+    // ------- HACER EL DESPEGABLE DEL FILTRO  --------- //
 
     const [dropDown, setDropDown] = useState(false);
 
     const abrircerrarDropDown = () => {
-
         setDropDown(!dropDown);
     }
 

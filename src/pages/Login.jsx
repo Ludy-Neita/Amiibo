@@ -40,14 +40,15 @@ export default function Login() {
 
         localStorage.setItem("cuenta", registro);
 
-
         setHayError(false);
 
         navigate("/inicio")
 
-      } else { setHayError(true); } // del segundo if
+      }
+      else { setHayError(true); } // del segundo if
 
-    } else { setHayError(true); } // del primer if
+    }
+    else { setHayError(true); } // del primer if
   }
 
   const verificar = () => {
@@ -63,12 +64,11 @@ export default function Login() {
     <div className="fondo">
 
       <div className="img-title">
-
         <img
           src={ImgTitulo}
           className="logo"
-          alt="logo inicial" />
-
+          alt="logo inicial"
+        />
       </div>
 
       <div className="contenedor-inicial">
@@ -84,29 +84,29 @@ export default function Login() {
           onChange={(e) => ingresoUsuario(e.target.value)}>
         </input>
 
-
         <label className="label-normal">Constraseña:</label>
 
         <input
-          className={contraseñaError ? "input-error" : "input-normal"}
+          className={contraseñaError ? "input-error" : "input-normal"} // cambia el className si hay un error, esto para el CSS. que lo muestre rojo.
           type="password"
           placeholder='Type your password'
           onChange={(e) => ingresoContraseña(e.target.value)}
-
         >
         </input>
 
-        {contraseñaError &&
+        {contraseñaError && // si la contraseña tiene menos de 6 caracteres hacer lo siguiente:
           <label className="label-error">
             La contraseña debe tener más de 6 caracteres
           </label>
         }
 
-        <button className="boton-ingresar" onClick={verificar}> Enter
+        <button
+          className="boton-ingresar"
+          onClick={verificar}>
+          Enter
         </button>
 
-
-        {hayError &&
+        {hayError && // si hay error en la contraseña o en el usuario hacer lo siguiente:
           <label className="error-general">
             ¡El usuario o la contraseña son inválidos!
           </label>

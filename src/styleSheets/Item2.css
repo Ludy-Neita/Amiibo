@@ -1,18 +1,13 @@
 .lista-amiibos {
-
-    /*background-color: blue;*/
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 15px;
     margin-bottom: 40px;
     border: 2px solid rgb(234, 232, 232);
     padding: 0px;
-
     background-color: rgba(239, 231, 233, 0.6);
 }
 
 .nombre-amiibo {
-
-    /* background-color: green;*/
     font-size: 20px;
     margin: 5px;
     margin-top: 10px;
@@ -20,31 +15,22 @@
 }
 
 .img-amiibo {
-
-    /* background-color: yellow;*/
     height: 250px;
     width: 50%;
-
 }
 
 .nombre-tipo {
-
-    /* background-color: red;*/
     margin: 5px;
-
 }
 
 .detalles {
-    /* background-color: palevioletred;*/
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 0px;
     border-top: 2px solid rgb(139, 192, 74, 0.4);
-
 }
 
 .button-detalles {
-
     background-image: linear-gradient(to right, rgb(182, 38, 121), rgba(76, 167, 225));
     width: 130px;
     height: 35px;

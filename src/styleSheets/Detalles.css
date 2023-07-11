@@ -18,7 +18,6 @@
 }
 
 .character-amiibos {
-   /* background-color: rgb(220, 59, 172); */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 45px;
     text-align: center;
@@ -26,7 +25,6 @@
 }
 
 .un-amiibos {
-    /*background-color: brown;*/
     margin-left: 40px;
     margin-right: 40px;
     padding: 20px;
@@ -42,24 +40,7 @@
     height: 200px;
 }
 
-@media screen and (min-width: 600px) {
-
-    .contendor-img-nombre-serie {
-        height: 350px;
-
-    }
-
-    .nombre-serie {
-        font-size: 25px;
-    }
-
-    .contendor-informacion-un-amiibo {
-        font-size: 25px;
-    }
-}
-
 .contendor-img-un-amiibo {
-    /*background-color: blueviolet; */
     padding: 10px;
     text-align: center;
     align-items: center;
@@ -68,13 +49,11 @@
 }
 
 .img-un-amiibo {
-    /*background-color: rgb(250, 21, 0); */
     width: 100%;
     height: 100%;
 }
 
 .nombre-serie {
-    /*background-color: plum; */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     align-items: center;
     text-align: center;
@@ -90,48 +69,23 @@
 }
 
 .nombre-un-amiibo {
-    /*background-color: aqua; */
     display: flex;
     margin: 15px;
 
 }
 
 .serie-un-amiibo {
-    /*background-color: green; */
     display: flex;
     align-items: center;
     text-align: center;
     margin: 15px;
 }
 
-/*
-.seriejuego-un-amiibo {
-    /*background-color: palevioletred; 
-    margin: 15px;
-}
-
-.tipo-un-amiibo {
-    /*background-color: blue; 
-    margin: 15px;
-}
-
-.juego-un-amiibo {
-    /*background-color: rgb(71, 52, 58); 
-    margin: 15px;
-}
-
-.disponible-un-amiibo {
-    /*background-color: darkgoldenrod;
-    margin: 15px;
-}
-
-*/
 .seriejuego-un-amiibo, .tipo-un-amiibo, .juego-un-amiibo, .disponible-un-amiibo {
     margin: 15px;
 }
 
 .subtitulo {
-    /* background-color: salmon; */
     font-weight: bold;
     text-align: center;
     align-items: center;
@@ -139,9 +93,23 @@
 }
 
 .subtitulo-informacion {
-    /*background-color: skyblue; */
     text-align: center;
     align-items: center;
     margin: 0px;
     color: rgb(93, 92, 92);
+}
+
+@media screen and (min-width: 600px) {
+
+    .contendor-img-nombre-serie {
+        height: 350px;
+    }
+
+    .nombre-serie {
+        font-size: 25px;
+    }
+
+    .contendor-informacion-un-amiibo {
+        font-size: 25px;
+    }
 }
