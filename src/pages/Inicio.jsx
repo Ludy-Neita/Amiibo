@@ -61,7 +61,7 @@ export default function Inicio() {
         if (buscar !== '') {
 
             // amiibosFiltrados, son los datos filtrados o todos los datos si no se hace la opcion de filtro.
-            let variableTemporalBusqueda = amiibosFiltrados.filter(obj => obj.name.includes(buscar)); //Busca en los nombres que incluyan la palabra de la busqueda
+            let variableTemporalBusqueda = amiibosFiltrados.filter(obj => obj.name.toLowerCase().includes(buscar.toLocaleLowerCase())); //Busca en los nombres que incluyan la palabra de la busqueda
             setAmiibosBuscados(variableTemporalBusqueda)
 
         } else {
