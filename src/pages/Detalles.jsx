@@ -130,7 +130,7 @@ export default function Detalles() {
             <p className="subtitulo-informacion">{amiiboDetallado?.type} </p>
           </div>
 
-          {amiiboDetallado?.games3DS || !amiiboDetallado?.games3DS &&  // Si hay datos muestre la info. si no, no haga nada. 
+          {amiiboDetallado?.games3DS != "" &&  // Si hay datos muestre la info. si no, no haga nada. 
             <div className="juego-un-amiibo">
               <p className="subtitulo"> Juego: </p>
               <p className="subtitulo-informacion">{amiiboDetallado?.games3DS[0].gameName} </p>
