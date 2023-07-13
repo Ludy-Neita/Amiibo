@@ -12,6 +12,8 @@ export default function Inicio() {
 
     const [resultadoAmiibo, setResultadoAmiibo] = useState([]);
 
+    const [loading, setLoading] = useState(true);
+    
     useEffect(() => {
 
         const consultarAPI = async () => {
@@ -21,6 +23,8 @@ export default function Inicio() {
             const informacionAPIJson = await respuestaAPI.json();
 
             setResultadoAmiibo(informacionAPIJson.amiibo);
+
+            setLoading(false); 
 
         }
         consultarAPI();
@@ -75,6 +79,8 @@ export default function Inicio() {
         navigate('/');
     };
 
+
+    
     return (
 
         <div>
@@ -110,6 +116,7 @@ export default function Inicio() {
                 //  si se utiliza el input de "busqueda" pasar los amiibos que tienen el nombre buscado, si no, pasar "amiibosFiltrados" que es el array que se filtró (si se hizo filtro), si no se hizo filtro que pase el array de la API (resultadoAmiibo)
                 resultadoFiltroBusquedaAmiibo={amiibosBuscados !== null ? amiibosBuscados : amiibosFiltrados}
                 filtro={filtros}
+                cargar={loading}
             />
         </div>
     );

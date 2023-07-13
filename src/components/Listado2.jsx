@@ -1,9 +1,11 @@
 import "../styleSheets/Listado2.css"
+import Item2 from './Item2';
 import { useEffect, useState } from 'react';
 import { AiOutlinePlusSquare } from '@react-icons/all-files/ai/AiOutlinePlusSquare' //esto  es el icono de +.
-import Item2 from './Item2';
+import { Spinner } from "reactstrap";
+import "bootstrap/dist/css/bootstrap.min.css"
 
-export default function Listado2({ resultadoFiltroBusquedaAmiibo, filtro }) { // props. de la page "Inicio"
+export default function Listado2({ resultadoFiltroBusquedaAmiibo, filtro, cargar }) { // props. de la page "Inicio"
 
     // ------- CANTIDAD DE AMIIBOS A MOSTRAR  --------- //
 
@@ -20,6 +22,18 @@ export default function Listado2({ resultadoFiltroBusquedaAmiibo, filtro }) { //
     useEffect(() => {
         setPagina(1)
     }, [filtro])
+
+    // --------- LOADING --------- //
+    // el CSS está en Detalles.css
+
+    if (cargar || !resultadoFiltroBusquedaAmiibo) {
+        return (
+            <div className="contenedor-spinner">
+                <Spinner className="cargando" color="info" />
+                <p className="nombre-spinner">Cargando amiibos...</p>
+            </div>
+        );
+    }
 
     return (
 

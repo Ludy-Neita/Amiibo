@@ -3,6 +3,8 @@ import { useState, useEffect } from "react"
 import { useNavigate } from 'react-router-dom';
 import { AiOutlineCloseCircle } from '@react-icons/all-files/ai/AiOutlineCloseCircle'  // esto es el icono de x.
 import { IoIosArrowBack } from '@react-icons/all-files/io/IoIosArrowBack'// esto es el icono de regresar.
+import { Spinner } from "reactstrap";
+import "bootstrap/dist/css/bootstrap.min.css"
 import "../styleSheets/Detalles.css"
 
 export default function Detalles() {
@@ -17,9 +19,11 @@ export default function Detalles() {
     navigate('/');
   };
 
-  // --------- OBTENER INFORMACIÓN DE LA API NUEVAMENTE  --------- //
+  // --------- OBTENER INFORMACIÓN DE LA API NUEVAMENTE y UN LOADING --------- //
 
   const [amiibo2API, setAmiibo2API] = useState([]);
+ 
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
 
@@ -31,10 +35,13 @@ export default function Detalles() {
 
       setAmiibo2API(informacion2APIJson.amiibo);
 
+      setLoading(false); 
+
     }
     consulta2API();
 
   }, [])
+
 
   // --------- OBTENER INFORMACIÓN DE SOLO UN AMIIBO POR TAIL (ID) --------- //
 
@@ -50,6 +57,18 @@ export default function Detalles() {
     setAmiiboDetallado(temporal2)
 
   }, [tail, amiibo2API])
+
+  // --------- LOADING --------- //
+
+  if (loading || !amiibo2API) {
+    return (
+
+      <div className="contenedor-spinner">
+        <Spinner className="cargando" color="warning" />
+        <p className="nombre-spinner">Cargando un amiibo...</p>
+      </div>
+    );
+  }
 
   return (
 

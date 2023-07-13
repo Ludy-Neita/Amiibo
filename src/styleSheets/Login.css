@@ -73,6 +73,7 @@
     border: 1px solid rgba(76, 167, 225);
     cursor: pointer;
     outline: none;
+    padding: 15px;
 }
 
 .input-error {
