@@ -63,7 +63,7 @@ export default function Detalles() {
   if (loading || !amiibo2API) {
     return (
 
-      <div className="contenedor-spinner">
+      <div className="contenedor-spinner-detalles">
         <Spinner className="cargando" color="warning" />
         <p className="nombre-spinner">Cargando un amiibo...</p>
       </div>

@@ -13,7 +13,7 @@ export default function Inicio() {
     const [resultadoAmiibo, setResultadoAmiibo] = useState([]);
 
     const [loading, setLoading] = useState(true);
-    
+
     useEffect(() => {
 
         const consultarAPI = async () => {
@@ -24,7 +24,7 @@ export default function Inicio() {
 
             setResultadoAmiibo(informacionAPIJson.amiibo);
 
-            setLoading(false); 
+            setLoading(false);
 
         }
         consultarAPI();
@@ -80,14 +80,14 @@ export default function Inicio() {
     };
 
 
-    
+
     return (
 
         <div>
             <div className="imagen-top">
                 <img
-                    src={ImgTop}
                     className="imgTOP"
+                    src={ImgTop}
                     alt="imagen top"
                 />
             </div>

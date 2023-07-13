@@ -25,8 +25,8 @@
 }
 
 .un-amiibos {
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 15px;
+    margin-right: 15px;
     padding: 20px;
 }
 
@@ -45,7 +45,7 @@
     text-align: center;
     align-items: center;
     height: 100%;
-    margin: 20px;
+    
 }
 
 .img-un-amiibo {
@@ -55,9 +55,13 @@
 
 .nombre-serie {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    align-items: center;
     text-align: center;
     border-left: 2px solid grey;
+    font-size: 0.9rem;
+    height: 80%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .contendor-informacion-un-amiibo {
@@ -66,11 +70,14 @@
     margin: 10px;
     border-top: 2px solid rgb(172, 170, 170);
     padding: 10px;
+    font-size: 0.9rem;
 }
 
 .nombre-un-amiibo {
     display: flex;
     margin: 15px;
+    align-items: center;
+    text-align: center;
 
 }
 
@@ -79,6 +86,7 @@
     align-items: center;
     text-align: center;
     margin: 15px;
+   
 }
 
 .seriejuego-un-amiibo,
@@ -102,22 +110,17 @@
     color: rgb(93, 92, 92);
 }
 
-.contenedor-spinner {
+.contenedor-spinner-detalles {
     height: 100vh;
     width: 100%;
-}
-
-.cargando {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .nombre-spinner {
-    margin-top: 40px;
-    position: absolute;
-    top: 50%;
-    left: 45%;
+    margin-top: 20px;
 }
 
 

@@ -24,11 +24,10 @@ export default function Listado2({ resultadoFiltroBusquedaAmiibo, filtro, cargar
     }, [filtro])
 
     // --------- LOADING --------- //
-    // el CSS está en Detalles.css
 
     if (cargar || !resultadoFiltroBusquedaAmiibo) {
         return (
-            <div className="contenedor-spinner">
+            <div className="contenedor-spinner-listado2">
                 <Spinner className="cargando" color="info" />
                 <p className="nombre-spinner">Cargando amiibos...</p>
             </div>
